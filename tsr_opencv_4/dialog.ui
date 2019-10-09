@@ -211,7 +211,7 @@
      <x>660</x>
      <y>10</y>
      <width>301</width>
-     <height>601</height>
+     <height>481</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -252,8 +252,8 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>620</y>
+     <x>550</x>
+     <y>500</y>
      <width>211</width>
      <height>121</height>
     </rect>
@@ -304,8 +304,8 @@
   <widget class="QPushButton" name="nagraj">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>620</y>
+     <x>770</x>
+     <y>530</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -317,8 +317,8 @@
   <widget class="QPushButton" name="zdjecie">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>650</y>
+     <x>770</x>
+     <y>560</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -330,8 +330,8 @@
   <widget class="QPushButton" name="videooff">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>620</y>
+     <x>770</x>
+     <y>500</y>
      <width>75</width>
      <height>23</height>
     </rect>

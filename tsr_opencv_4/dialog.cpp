@@ -11,7 +11,7 @@ Dialog::Dialog(QWidget* parent) :QDialog(parent), ui(new Ui::Dialog)
 	ui->setupUi(this);
 	setWindowFlags(windowFlags() | Qt::WindowMinimizeButtonHint);
 	d1.load("xml/kaskada.xml");
-	svm = SVM::load("xml/linear.xml");
+	svm = SVM::load("xml/svm.xml");
 	ui->wykrywanie_Button->setEnabled(false);
 	ui->stop_Button->setEnabled(false);
 	ui->display_screen->setScaledContents(true);
@@ -23,6 +23,11 @@ Dialog::Dialog(QWidget* parent) :QDialog(parent), ui(new Ui::Dialog)
 	ui->spin1->setValue(1.05);
 }
 
+void Dialog::wait_until_next_second()
+{
+	time_t before = time(0);
+	while (difftime(time(0), before) <= 3);
+}
 void Dialog::on_wykrywanie_Button_clicked()
 {
 	connect(timer2, SIGNAL(timeout()), this, SLOT(processFrameAndUpdateGUI()));
@@ -96,7 +101,7 @@ void Dialog::on_zdjecie_Button_clicked()
 	image.release();
 	ui->display_screen->clear();
 	x = 0;
-
+	
 	dialog.setNameFilter(tr("Zdjêcie (*.jpg *.jpeg *.png *.bmp)"));
 	dialog.setViewMode(QFileDialog::Detail);
 	imagefileName = QFileDialog::getOpenFileName(this, tr("Open File"), "C:/Users/Patryk/Desktop/badania/ogr predk/1024 ", tr("Zdjêcie(*.jpg *.jpeg *.png *.bmp)"));
@@ -143,10 +148,8 @@ void Dialog::on_zdjecie_Button_clicked()
 			roi = Rect(8, 11, 35, 30);
 
 			frameROI1 = frameROI1(roi);
-			cv::resize(frameROI1, frameROI1, Size(50, 50));
 			inRange(frameROI1, Scalar(0, 0, 0, 0), Scalar(180, 255, 100, 0), frameROI1);
 
-			imwrite("ok.jpg", frameROI1);
 			svm_predict(frameROI1);
 			
 
@@ -159,62 +162,60 @@ void Dialog::on_zdjecie_Button_clicked()
 			
 			switch (result)
 			{
-			case 1:
+			case five:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x5.jpg").scaled(100, 100));
 				QSound::play("dzwieki/5.wav");
 				break;
-			case 2:
+			case ten:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x10.jpg").scaled(100, 100));
 				QSound::play("dzwieki/10.wav");
 				break;
-			case 3:
+			case twenty:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x20.jpg").scaled(100, 100));
 				QSound::play("dzwieki/20.wav");
 				break;
-			case 4:
+			case thirty:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x30.jpg").scaled(100, 100));
 				QSound::play("dzwieki/30.wav");
 				break;
-			case 5:
+			case fourty:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x40.jpg").scaled(100, 100));
 				QSound::play("dzwieki/40.wav");
 				break;
-			case 6:
+			case fifty:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x50.jpg").scaled(100, 100));
 				QSound::play("dzwieki/50.wav");
 				break;
-			case 7:
+			case sixty:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x60.jpg").scaled(100, 100));
 				QSound::play("dzwieki/60.wav");
 				break;
-			case 8:
+			case seventy:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x70.jpg").scaled(100, 100));
 				QSound::play("dzwieki/70.wav");
 				break;
-			case 9:
+			case eighty:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x80.jpg").scaled(100, 100));
 				QSound::play("dzwieki/80.wav");
 				break;
-			case -1:
+			case ninety:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x90.jpg").scaled(100, 100));
 				QSound::play("dzwieki/90.wav");
 				break;
-			case -2:
+			case hundred:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x100.jpg").scaled(100, 100));
 				QSound::play("dzwieki/100.wav");
 				break;
-			case -3:
+			case hundred_ten:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x110.jpg").scaled(100, 100));
 				QSound::play("dzwieki/110.wav");
 				break;
-			case -4:
+			case hundred_twenty:
 				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x120.jpg").scaled(100, 100));
 				QSound::play("dzwieki/120.wav");
 				break;
-			case 0:
-				svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x120.jpg").scaled(100, 100));
-				break;
 			default: 
+
 				break;
 			}
 			
@@ -224,7 +225,7 @@ void Dialog::on_zdjecie_Button_clicked()
 			ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 			ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 			x++;
-			
+			wait_until_next_second();
 		}
 
 

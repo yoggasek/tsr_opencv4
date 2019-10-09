@@ -50,7 +50,7 @@ public:
 
 
 private:
-
+	enum znaki { negatyw, five, ten, twenty, thirty, fourty, fifty, sixty, seventy, eighty, ninety, hundred, hundred_ten, hundred_twenty };
 	QString napis;
 	int x;
 	QImage zdjecie;
@@ -86,6 +86,7 @@ private:
 	Ui::Dialog* ui;
 private slots:
 	//QImage Mat3b2QImage(Mat3b &src);
+	void wait_until_next_second();
 	void on_stop_Button_clicked();
 	void on_zdjecie_Button_clicked();
 	void on_nagraj_clicked();

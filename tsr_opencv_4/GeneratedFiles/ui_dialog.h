@@ -147,7 +147,7 @@ public:
         tableWidget = new QTableWidget(Dialog);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setEnabled(true);
-        tableWidget->setGeometry(QRect(660, 10, 301, 601));
+        tableWidget->setGeometry(QRect(660, 10, 301, 481));
         tableWidget->setFrameShape(QFrame::WinPanel);
         tableWidget->setFrameShadow(QFrame::Raised);
         tableWidget->setTextElideMode(Qt::ElideLeft);
@@ -160,7 +160,7 @@ public:
         frame_counter->setGeometry(QRect(540, 500, 121, 41));
         formLayoutWidget = new QWidget(Dialog);
         formLayoutWidget->setObjectName(QString::fromUtf8("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(10, 620, 211, 121));
+        formLayoutWidget->setGeometry(QRect(550, 500, 211, 121));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
@@ -206,13 +206,13 @@ public:
 
         nagraj = new QPushButton(Dialog);
         nagraj->setObjectName(QString::fromUtf8("nagraj"));
-        nagraj->setGeometry(QRect(230, 620, 75, 23));
+        nagraj->setGeometry(QRect(770, 530, 75, 23));
         zdjecie = new QPushButton(Dialog);
         zdjecie->setObjectName(QString::fromUtf8("zdjecie"));
-        zdjecie->setGeometry(QRect(230, 650, 75, 23));
+        zdjecie->setGeometry(QRect(770, 560, 75, 23));
         videooff = new QPushButton(Dialog);
         videooff->setObjectName(QString::fromUtf8("videooff"));
-        videooff->setGeometry(QRect(310, 620, 75, 23));
+        videooff->setGeometry(QRect(770, 500, 75, 23));
 
         retranslateUi(Dialog);
 

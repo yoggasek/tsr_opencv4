@@ -1,2 +1,7 @@
-﻿  dialog.cpp
+﻿  Moc'ing dialog.h...
+  dialog.cpp
+  film.cpp
+  kamera.cpp
+  mainwindow.cpp
+  moc_dialog.cpp
   tsr_opencv_4.vcxproj -> C:\Users\yoggas\source\repos\tsr_opencv_4\x64\Release\tsr_opencv_4.exe

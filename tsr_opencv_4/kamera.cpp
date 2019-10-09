@@ -32,9 +32,9 @@ void Dialog::kamerka()
 void Dialog::svm_predict(Mat& image)
 {
 
-	//cv::resize(image, image, Size(50, 50));//resize image
+	cv::resize(image, image, Size(50, 50));//resize image
 	int img_area = 50 * 50;
-
+	imwrite("sample_svm.jpg", image);
 	Mat test_image(1, img_area, CV_32FC1);        //Creates a 1 x 30000 matrix to house the test image. 
 
 	int jj = 0;
@@ -47,7 +47,7 @@ void Dialog::svm_predict(Mat& image)
 		}
 	}
 
-	imwrite("lol.jpg", test_image);
+	imwrite("vector_svm.jpg", test_image);
 	result = svm->predict(test_image);
 }
 
@@ -104,7 +104,7 @@ void Dialog::processFrameAndUpdateGUI()
 		Rect roi = Rect(8, 11, 35, 30);
 		frameROI1 = frameROI1(roi);
 		inRange(frameROI1, Scalar(0, 0, 0, 0), Scalar(180, 255, 100, 0), frameROI1);
-
+		//cv::resize(frameROI1, frameROI1, Size(50, 50));
 		//namedWindow("", WINDOW_NORMAL);
 		imshow("", frameROI1);
 		svm_predict(frameROI1);
@@ -117,60 +117,58 @@ void Dialog::processFrameAndUpdateGUI()
 
 		switch (result)
 		{
-		case 1:
+		case five:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x5.jpg").scaled(100, 100));
 			QSound::play("dzwieki/5.wav");
 			break;
-		case 2:
+		case ten:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x10.jpg").scaled(100, 100));
 			QSound::play("dzwieki/10.wav");
 			break;
-		case 3:
+		case twenty:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x20.jpg").scaled(100, 100));
 			QSound::play("dzwieki/20.wav");
 			break;
-		case 4:
+		case thirty:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x30.jpg").scaled(100, 100));
 			QSound::play("dzwieki/30.wav");
 			break;
-		case 5:
+		case fourty:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x40.jpg").scaled(100, 100));
 			QSound::play("dzwieki/40.wav");
 			break;
-		case 6:
+		case fifty:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x50.jpg").scaled(100, 100));
 			QSound::play("dzwieki/50.wav");
 			break;
-		case 7:
+		case sixty:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x60.jpg").scaled(100, 100));
 			QSound::play("dzwieki/60.wav");
 			break;
-		case 8:
+		case seventy:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x70.jpg").scaled(100, 100));
 			QSound::play("dzwieki/70.wav");
 			break;
-		case 9:
+		case eighty:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x80.jpg").scaled(100, 100));
 			QSound::play("dzwieki/80.wav");
 			break;
-		case -1:
+		case ninety:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x90.jpg").scaled(100, 100));
 			QSound::play("dzwieki/90.wav");
 			break;
-		case -2:
+		case hundred:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x100.jpg").scaled(100, 100));
 			QSound::play("dzwieki/100.wav");
 			break;
-		case -3:
+		case hundred_ten:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x110.jpg").scaled(100, 100));
 			QSound::play("dzwieki/110.wav");
 			break;
-		case -4:
+		case hundred_twenty:
 			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x120.jpg").scaled(100, 100));
 			QSound::play("dzwieki/120.wav");
 			break;
-		case 0:
-			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/x120.jpg").scaled(100, 100));
 		default:
 			break;
 		}
@@ -181,134 +179,11 @@ void Dialog::processFrameAndUpdateGUI()
 		ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 		ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 		x++;
-		//waitKey(3000);
+		waitKey(3000);
 
 	}
-
-	for (size_t i = 0; i < znaki2.size(); i++)
-	{
-
-		Point pt1(znaki2[i].x + znaki2[i].width, znaki2[i].y + znaki2[i].height);
-		Point pt2(znaki2[i].x, znaki2[i].y);
-		frameROI2 = e(znaki2[i]);
-
-		cvtColor(frameROI2, frameROI2, COLOR_BGR2RGB);
-		qimg = QImage((uchar*)frameROI2.data, frameROI2.cols, frameROI2.rows, frameROI2.step, QImage::Format_RGB888);
-		item = new QTableWidgetItem;
-		item->setData(Qt::DecorationRole, QPixmap::fromImage(qimg).scaled(100, 100));
-
-		//svm_predict(frameROI2);
-
-
-		svmr = new QTableWidgetItem;
-		numer_klatki = new QTableWidgetItem;
-		numer_klatki->setData(0, QString(napis));
-		ui->tableWidget->setItem(x, 0, numer_klatki);
-
-		/*
-		switch (result)
-		{
-
-		case -5:
-			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/strefa.jpg").scaled(100, 100));
-			QSound::play("dzwieki/strefa.wav");
-			break;
-		default:
-			break;
-		}*/
-		QSound::play("dzwieki/strefa.wav");
-		svmr->setData(Qt::DecorationRole, QPixmap("obrazy/strefa.jpg").scaled(100, 100));
-		svmr->setTextAlignment(Qt::AlignCenter);
-		ui->tableWidget->setItem(x, 2, svmr);
-		ui->tableWidget->setItem(x, 1, item);
-		ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-		ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-		x++;
-		//waitKey(3000);
-	}
-	for (size_t i = 0; i < znaki3.size(); i++)
-	{
-
-		Point pt1(znaki3[i].x + znaki3[i].width, znaki3[i].y + znaki3[i].height);
-		Point pt2(znaki3[i].x, znaki3[i].y);
-		frameROI3 = e(znaki3[i]);
-
-		cvtColor(frameROI3, frameROI3, COLOR_BGR2RGB);
-		qimg = QImage((uchar*)frameROI3.data, frameROI3.cols, frameROI3.rows, frameROI3.step, QImage::Format_RGB888);
-		item = new QTableWidgetItem;
-		item->setData(Qt::DecorationRole, QPixmap::fromImage(qimg).scaled(100, 100));
-
-		//svm_predict(frameROI2);
-
-
-		svmr = new QTableWidgetItem;
-		numer_klatki = new QTableWidgetItem;
-		numer_klatki->setData(0, QString(napis));
-		ui->tableWidget->setItem(x, 0, numer_klatki);
-
-		/*switch (result)
-		{
-
-		case -5:
-		svmr->setData(Qt::DecorationRole, QPixmap("obrazy/strefa.jpg").scaled(100, 100));
-		QSound::play("dzwieki/strefa.wav");
-		break;
-		default:
-		break;
-		}*/
-
-		svmr->setData(Qt::DecorationRole, QPixmap("obrazy/a17.jpg").scaled(100, 100));
-		QSound::play("dzwieki/a17.wav");
-
-		svmr->setTextAlignment(Qt::AlignCenter);
-		ui->tableWidget->setItem(x, 2, svmr);
-		ui->tableWidget->setItem(x, 1, item);
-		ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-		ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-		x++;
-		//waitKey(3000);
-
-	}
-
-	for (size_t i = 0; i < znaki4.size(); i++)
-	{
-		Point pt1(znaki4[i].x + znaki4[i].width, znaki4[i].y + znaki4[i].height);
-		Point pt2(znaki4[i].x, znaki4[i].y);
-		frameROI4 = e(znaki4[i]);
-
-		cvtColor(frameROI4, frameROI4, COLOR_BGR2RGB);
-		qimg = QImage((uchar*)frameROI4.data, frameROI4.cols, frameROI4.rows, frameROI4.step, QImage::Format_RGB888);
-		item = new QTableWidgetItem;
-		item->setData(Qt::DecorationRole, QPixmap::fromImage(qimg).scaled(100, 100));
-
-		//svm_predict(frameROI4);
-
-		svmr = new QTableWidgetItem;
-		numer_klatki = new QTableWidgetItem;
-		numer_klatki->setData(0, QString(napis));
-		ui->tableWidget->setItem(x, 0, numer_klatki);
-
-		/*switch (result)
-		{
-
-		case -5:
-			svmr->setData(Qt::DecorationRole, QPixmap("obrazy/d6.jpg").scaled(100, 100));
-			QSound::play("dzwieki/d6.wav");
-			break;
-		default:
-			break;
-		}*/
-		QSound::play("dzwieki/d6.wav");
-		svmr->setData(Qt::DecorationRole, QPixmap("obrazy/d6.jpg").scaled(100, 100));
-		svmr->setTextAlignment(Qt::AlignCenter);
-		ui->tableWidget->setItem(x, 2, svmr);
-		ui->tableWidget->setItem(x, 1, item);
-		ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-		ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-		x++;
-		//waitKey(3000);
-	}
-
+	
+	
 }
 
 

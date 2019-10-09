@@ -28,39 +28,39 @@ public:
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
-    void setupUi(QMainWindow *MainWindowClass)
+    void setupUi(QMainWindow *MainWindow)
     {
-        if (MainWindowClass->objectName().isEmpty())
-            MainWindowClass->setObjectName(QString::fromUtf8("MainWindowClass"));
-        MainWindowClass->resize(199, 104);
-        MainWindowClass->setMinimumSize(QSize(199, 104));
-        MainWindowClass->setMaximumSize(QSize(199, 104));
+        if (MainWindow->objectName().isEmpty())
+            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+        MainWindow->resize(199, 104);
+        MainWindow->setMinimumSize(QSize(199, 104));
+        MainWindow->setMaximumSize(QSize(199, 104));
         QIcon icon;
         icon.addFile(QString::fromUtf8("obrazy/006-roundabout.png"), QSize(), QIcon::Normal, QIcon::Off);
-        MainWindowClass->setWindowIcon(icon);
-        centralWidget = new QWidget(MainWindowClass);
+        MainWindow->setWindowIcon(icon);
+        centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         centralWidget->setMinimumSize(QSize(199, 104));
         centralWidget->setMaximumSize(QSize(199, 104));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(20, 20, 161, 41));
-        MainWindowClass->setCentralWidget(centralWidget);
-        mainToolBar = new QToolBar(MainWindowClass);
+        MainWindow->setCentralWidget(centralWidget);
+        mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
-        MainWindowClass->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(MainWindowClass);
+        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
+        statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
-        MainWindowClass->setStatusBar(statusBar);
+        MainWindow->setStatusBar(statusBar);
 
-        retranslateUi(MainWindowClass);
+        retranslateUi(MainWindow);
 
-        QMetaObject::connectSlotsByName(MainWindowClass);
+        QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
-    void retranslateUi(QMainWindow *MainWindowClass)
+    void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindowClass->setWindowTitle(QApplication::translate("MainWindowClass", "TSR", nullptr));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindowClass", "TSR", nullptr));
         pushButton->setText(QApplication::translate("MainWindowClass", "LBP + SVM", nullptr));
     } // retranslateUi
 
