@@ -10,8 +10,14 @@
     <x>0</x>
     <y>0</y>
     <width>981</width>
-    <height>750</height>
+    <height>636</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
@@ -35,311 +41,307 @@
   <property name="modal">
    <bool>false</bool>
   </property>
-  <widget class="QLabel" name="display_screen">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>640</width>
-     <height>480</height>
-    </rect>
-   </property>
-   <property name="autoFillBackground">
-    <bool>true</bool>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::WinPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <property name="lineWidth">
-    <number>4</number>
-   </property>
-   <property name="midLineWidth">
-    <number>4</number>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="margin">
-    <number>0</number>
-   </property>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>500</y>
-     <width>361</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QPushButton" name="film_Button">
-      <property name="text">
-       <string>Film</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>obrazy/movie_clapboard_cinema_clapper_studio_equipment_flat_icon_symbol-512.png</normaloff>obrazy/movie_clapboard_cinema_clapper_studio_equipment_flat_icon_symbol-512.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="kamera_Button">
-      <property name="text">
-       <string>Kamera</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>obrazy/webcam-512.png</normaloff>obrazy/webcam-512.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="zdjecie_Button">
-      <property name="text">
-       <string>Zdjęcie</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>obrazy/camera-512.png</normaloff>obrazy/camera-512.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>500</y>
-     <width>151</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="wykrywanie_Button">
-      <property name="text">
-       <string>Wykrywaj Znaki</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>obrazy/017-turn-right-2.png</normaloff>obrazy/017-turn-right-2.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="stop_Button">
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <italic>true</italic>
-       </font>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>STOP</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>obrazy/039-no-entry.png</normaloff>obrazy/039-no-entry.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="checkable">
-       <bool>false</bool>
-      </property>
-      <property name="autoDefault">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <widget class="QLabel" name="display_screen">
+      <property name="enabled">
        <bool>true</bool>
       </property>
-      <property name="default">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>641</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>4</number>
+      </property>
+      <property name="midLineWidth">
+       <number>4</number>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>500</y>
+        <width>361</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="film_Button">
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0.767136, y2:0.688, stop:0.0397727 rgba(0, 0, 0, 255), stop:0.789773 rgba(255, 255, 255, 255));</string>
+         </property>
+         <property name="text">
+          <string>Film</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>obrazy/movie_clapboard_cinema_clapper_studio_equipment_flat_icon_symbol-512.png</normaloff>obrazy/movie_clapboard_cinema_clapper_studio_equipment_flat_icon_symbol-512.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="kamera_Button">
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0.767136, y2:0.688, stop:0.0397727 rgba(0, 0, 0, 255), stop:0.789773 rgba(255, 255, 255, 255));</string>
+         </property>
+         <property name="text">
+          <string>Kamera</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>obrazy/webcam-512.png</normaloff>obrazy/webcam-512.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="zdjecie_Button">
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0.767136, y2:0.688, stop:0.0397727 rgba(0, 0, 0, 255), stop:0.789773 rgba(255, 255, 255, 255));</string>
+         </property>
+         <property name="text">
+          <string>Zdjęcie</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>obrazy/camera-512.png</normaloff>obrazy/camera-512.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>500</y>
+        <width>151</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="wykrywanie_Button">
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0.767136, y2:0.688, stop:0.0397727 rgba(0, 0, 0, 255), stop:0.789773 rgba(255, 255, 255, 255));</string>
+         </property>
+         <property name="text">
+          <string>Wykrywaj Znaki</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>obrazy/017-turn-right-2.png</normaloff>obrazy/017-turn-right-2.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="stop_Button">
+         <property name="font">
+          <font>
+           <family>Calibri</family>
+           <italic>true</italic>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0.767136, y2:0.688, stop:0.0397727 rgba(0, 0, 0, 255), stop:0.789773 rgba(255, 255, 255, 255));</string>
+         </property>
+         <property name="text">
+          <string>STOP</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>obrazy/039-no-entry.png</normaloff>obrazy/039-no-entry.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>0</y>
+        <width>311</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideLeft</enum>
+      </property>
+      <property name="showGrid">
        <bool>false</bool>
       </property>
-      <property name="flat">
+      <property name="gridStyle">
+       <enum>Qt::NoPen</enum>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+     <widget class="QPushButton" name="videooff">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>500</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0.767136, y2:0.688, stop:0.0397727 rgba(0, 0, 0, 255), stop:0.789773 rgba(255, 255, 255, 255));</string>
+      </property>
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="frame_counter">
+      <property name="enabled">
        <bool>false</bool>
       </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>660</x>
-     <y>10</y>
-     <width>301</width>
-     <height>481</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::WinPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <property name="textElideMode">
-    <enum>Qt::ElideLeft</enum>
-   </property>
-   <property name="showGrid">
-    <bool>false</bool>
-   </property>
-   <property name="gridStyle">
-    <enum>Qt::NoPen</enum>
-   </property>
-   <attribute name="horizontalHeaderVisible">
-    <bool>false</bool>
-   </attribute>
-   <attribute name="verticalHeaderVisible">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QLabel" name="frame_counter">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>500</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QWidget" name="formLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>500</y>
-     <width>211</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="1" column="1">
-     <widget class="QDoubleSpinBox" name="spin1"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QCheckBox" name="checkBox2">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>560</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
       <property name="text">
-       <string>Strefa zamieszkania</string>
+       <string/>
       </property>
      </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QDoubleSpinBox" name="spin2"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QCheckBox" name="checkBox3">
+     <widget class="QPushButton" name="nagraj">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>500</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0.767136, y2:0.688, stop:0.0397727 rgba(0, 0, 0, 255), stop:0.789773 rgba(255, 255, 255, 255));</string>
+      </property>
       <property name="text">
-       <string>Dzieci</string>
+       <string>Nagraj</string>
       </property>
      </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QDoubleSpinBox" name="spin3"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QCheckBox" name="checkBox4">
+     <widget class="QCheckBox" name="podglad">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>510</y>
+        <width>83</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>5</width>
+        <height>5</height>
+       </size>
+      </property>
       <property name="text">
-       <string>Przej. dla pieszych</string>
+       <string>Podgląd</string>
       </property>
      </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QDoubleSpinBox" name="spin4"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QCheckBox" name="checkBox1">
-      <property name="text">
-       <string>Ogr. Prędkości</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QPushButton" name="nagraj">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>530</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Nagraj</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="zdjecie">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>560</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Zrób zdjęcie</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="videooff">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>500</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Stop</string>
-   </property>
-  </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

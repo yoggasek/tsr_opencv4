@@ -39,6 +39,7 @@ namespace Ui {
 
 }
 
+
 class Dialog : public QDialog
 {
 
@@ -53,40 +54,39 @@ private:
 	enum znaki { negatyw, five, ten, twenty, thirty, fourty, fifty, sixty, seventy, eighty, ninety, hundred, hundred_ten, hundred_twenty };
 	QString napis;
 	int x;
-	QImage zdjecie;
 	Rect roi;
 	QString videofileName;
 	String videopath;
 	QImage dest;
-	QImage qimg, qimg2, qimg3, qimg4;
+	QPixmap noimg = "C:/Users/yoggas/source/repos/tsr_opencv_4/tsr_opencv_4/obrazy/noimage.png";
+	QImage qimg;
 	QFileDialog dialog;
 	QString imagefileName;
 	QTableWidgetItem* item = new QTableWidgetItem;
 	QTableWidgetItem* svmr = new QTableWidgetItem;
 	QTableWidgetItem* numer_klatki = new QTableWidgetItem;
 	Ptr<SVM> svm = SVM::create();
-	CascadeClassifier d2, d1, d3, d4, d5, d6;
-	vector<Rect>znaki1, znaki2, znaki3, znaki4, znaki5, znaki;
+	CascadeClassifier d1;
+	vector<Rect> znaki1;
 	QTimer* timer = new QTimer;
 	QTimer* timer2 = new QTimer;
 	QTimer* timer3 = new QTimer;
 	QImage* wsk;
-	double dt1, dt2, dt3, dt4;
 	Mat e;
-	Mat image2, image3, image4, image1, image5;
-	Mat frameROI, frameROI1, frameROI2, frameROI3, frameROI4, frameROI5;
-	Mat image;
+	Mat image, image2;
+	Mat frameROI, frameROI1;
 	int counter = 0;
 	int result;
 	Mat sign;
 	Mat frame;
+	bool podglad=0;
+	bool tryb=0;
 	bool playVideo;
 	char c;
 	VideoCapture capWebcam;
 	Ui::Dialog* ui;
 private slots:
 	//QImage Mat3b2QImage(Mat3b &src);
-	void wait_until_next_second();
 	void on_stop_Button_clicked();
 	void on_zdjecie_Button_clicked();
 	void on_nagraj_clicked();
@@ -100,8 +100,6 @@ private slots:
 	void numberofframes();
 	void kamerka();
 	void svm_predict(Mat& image);
-
-
-};
+	};
 
 #endif // DIALOG_H

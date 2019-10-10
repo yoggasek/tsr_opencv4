@@ -10,24 +10,26 @@ void Dialog::numberofframes()
 
 void Dialog::kamerka()
 {
-
+	tryb = 1;
 	capWebcam.read(image);
-	cvtColor(image, image, COLOR_BGR2RGB);
+	if (ui->podglad->isChecked()==true)
+	{
+		cvtColor(image, e, COLOR_BGR2RGB);
+		QImage qimg((uchar*)e.data, e.cols, e.rows, e.step, QImage::Format_RGB888);
+		ui->display_screen->setPixmap(QPixmap::fromImage(qimg));
+	}
+	else
+	{
+		ui->display_screen->clear();
+		ui->display_screen->setPixmap(noimg);
+	}
+	//cvtColor(image, image, COLOR_BGR2GRAY);
 	counter++;
 	numberofframes();
-	QImage qimg((uchar*)image.data, image.cols, image.rows, image.step, QImage::Format_RGB888);
-
-	ui->display_screen->setPixmap(QPixmap::fromImage(qimg));
-
 	QString klatki = QString("Frames: %1").arg(QString::number(counter));
-
-
-
-
+	
+	
 }
-
-
-
 
 void Dialog::svm_predict(Mat& image)
 {
@@ -58,26 +60,7 @@ void Dialog::processFrameAndUpdateGUI()
 	cvtColor(image, e, COLOR_BGR2RGB);
 	equalizeHist(image2, image2);
 
-	if (ui->checkBox1->isChecked())
-	{
-		dt1 = ui->spin1->value();
-		d1.detectMultiScale(image2, znaki1, dt1, 3, 0, Size(40, 40));
-	}
-	if (ui->checkBox2->isChecked())
-	{
-		dt2 = ui->spin2->value();
-		d2.detectMultiScale(image2, znaki2, dt2, 3, 0, Size(40, 40));
-	}
-	if (ui->checkBox3->isChecked())
-	{
-		dt3 = ui->spin3->value();
-		d3.detectMultiScale(image2, znaki3, dt3, 3, 0, Size(40, 40));
-	}
-	if (ui->checkBox4->isChecked())
-	{
-		dt4 = ui->spin4->value();
-		d4.detectMultiScale(image2, znaki4, dt4, 3, 0, Size(40, 40));
-	}
+	d1.detectMultiScale(image2, znaki1, 1.02, 3, 0, Size(40, 40));
 
 	napis = QString("Frame #%1").arg(QString::number(counter));
 
@@ -185,5 +168,4 @@ void Dialog::processFrameAndUpdateGUI()
 	
 	
 }
-
 

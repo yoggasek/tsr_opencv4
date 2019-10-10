@@ -1,7 +1,3 @@
-﻿  Moc'ing dialog.h...
-  dialog.cpp
-  film.cpp
-  kamera.cpp
-  mainwindow.cpp
-  moc_dialog.cpp
+﻿  dialog.cpp
+C:\Users\yoggas\source\repos\tsr_opencv_4\tsr_opencv_4\dialog.cpp(35): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
   tsr_opencv_4.vcxproj -> C:\Users\yoggas\source\repos\tsr_opencv_4\x64\Release\tsr_opencv_4.exe
